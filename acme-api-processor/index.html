@@ -1,0 +1,57 @@
+<head></head>
+<body>
+
+    <script>
+    const grabCompanies = () => new Promise((res, rej) => {
+            return window.fetch('https://acme-users-api-rev.herokuapp.com/api/companies')
+                .then(response => response.json())
+                .then(jsonData => res(jsonData))
+                .catch(e => rej(e));
+        })
+
+    const grabProducts = () => new Promise((res, rej) => {
+            return window.fetch('https://acme-users-api-rev.herokuapp.com/api/products')
+                 .then(response => response.json())
+                 .then(jsonData => res(jsonData))
+                 .catch(e => rej(e));
+        })
+
+    const grabOfferings = () => new Promise((resolve, reject) => {
+            return window.fetch('https://acme-users-api-rev.herokuapp.com/api/offerings')
+                .then((response => response.json()))
+                .then(jsonData => resolve(jsonData))
+                .catch(e => reject(e))
+        });
+
+    Promise.all([grabCompanies(), grabProducts(), grabOfferings()]).then(data)=>{
+
+    }
+
+    const productsInPriceRange = (products, dataObj) =>{
+        products.filter(product => product >= dataObj[min] && product <= dataObj[max])
+    }
+
+    const groupCompaniesByLetter = (companies) => {
+
+    }
+
+    const processOfferings = (obj) => {
+
+
+     }
+
+    const groupCompaniesByLetter = (companies) => {
+
+
+        }
+    
+    const processProducts = (obj) => {
+
+
+        }
+
+
+
+
+    </script>
+</body>
